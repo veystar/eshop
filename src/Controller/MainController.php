@@ -75,15 +75,6 @@ class MainController extends AbstractController
         return $this->render('main/order.html.twig', [
             'controller_name' => 'MainController',
         ]);
-    }
-
-    /**
-     * @Route("/login", name="login")
-     */
-    public function login()
-    {
-        return $this->render('main/login.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
-    }
+    } 
+    
 }
