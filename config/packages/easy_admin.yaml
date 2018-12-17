@@ -4,9 +4,9 @@ easy_admin:
         brand_color: '#1ABC9C'
         assets:
             css:
-                - 'bundles/easyadmin/bootstrap-all.css'
+                - 'css/bootstrap-all.css'
             js:
-                - 'bundles/easyadmin/bootstrap-all.js'
+                - 'js/bootstrap-all.js'
     entities:
         Product:
             class: App\Entity\Product
@@ -83,3 +83,21 @@ easy_admin:
             label: 'Пользователи'
             list:
                 title: '%%entity_label%%'
+
+        NewsItem:
+            class: App\Entity\NewsItem
+            label: 'Новости'
+            list:
+                title: '%%entity_label%%'
+                fields: [
+                    'id',
+                    { property: 'createdAt', label: 'Создано' },
+                    { property: 'title', label: 'Заголовок' },
+                    { property: 'content', label: 'Сообщение' }
+                        ]
+            new:
+                title: '%%entity_label%%'
+                fields: [
+                    { property: 'title', label: 'Заголовок' },
+                    { property: 'content', label: 'Сообщение' }
+                        ]

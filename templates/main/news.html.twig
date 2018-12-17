@@ -7,5 +7,18 @@
 <div class="col-sm-12">    			   			
 	<h2 class="title text-center"><strong> Новости</strong></h2>    			    				    				
 </div>
-
+<div class="blog-post-area">
+	<div class="single-blog-post">
+		{% for newsItem in news %}
+			<h3>{{ newsItem.title }}</h3>
+				<div class="post-meta">
+					<ul>
+						<li><i class="fa fa-calendar"></i> {{ newsItem.createdAt | date("m/d/Y") }}</li>
+					</ul>
+				</div>
+				<p align="justify">{{ newsItem.content | raw}}</p>
+		{% endfor %}
+	</div>
+</div>
+	
 {% endblock %}

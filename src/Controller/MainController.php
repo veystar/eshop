@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Service\ViewAllNews;
+use App\Repository\NewsItemRepository;
 
 class MainController extends AbstractController
 {
@@ -30,11 +32,10 @@ class MainController extends AbstractController
     /**
      * @Route("/news", name="news")
      */
-    public function news()
+    public function news(NewsItemRepository $newsRepository, ViewAllNews $myService)
     {
-        return $this->render('main/news.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
+        $news = $myService->getAllNews();
+        return $this->render('main/news.html.twig', compact('news'));
     }
 
     /**
