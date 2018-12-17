@@ -5,18 +5,28 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Service\ViewAllNews;
+use App\Service\ViewPharmGroup;
+use App\Service\ViewMedForm;
+use App\Service\ViewTargetAnimals;
 use App\Repository\NewsItemRepository;
+use App\Repository\PharmGroupRepository;
+use App\Repository\TargetAnimalsRepository;
+use App\Repository\MedicinalFormRepository;
+
 
 class MainController extends AbstractController
 {
     /**
      * @Route("/", name="main")
      */
-    public function index()
+    public function index(PharmGroupRepository $pharmRepository, ViewPharmGroup $pharmService, 
+                            MedicinalFormRepository $medRepository, ViewMedForm $medService, 
+                            TargetAnimalsRepository $animalRepository, ViewTargetAnimals $animalService)
     {
-        return $this->render('main/index.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
+        $pharm = $pharmService->getAllPharm();
+        $medForms = $medService->getAllMedForms();
+        $animals = $animalService->getAllAnimals();
+        return $this->render('main/index.html.twig', compact('pharm', 'medForms', 'animals'));
     }
 
     /**
@@ -24,9 +34,7 @@ class MainController extends AbstractController
      */
     public function about()
     {
-        return $this->render('main/about.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
+        return $this->render('main/about.html.twig');
     }
 
     /**
@@ -43,9 +51,7 @@ class MainController extends AbstractController
      */
     public function contacts()
     {
-        return $this->render('main/contacts.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
+        return $this->render('main/contacts.html.twig');
     }
 
     /**
@@ -53,9 +59,7 @@ class MainController extends AbstractController
      */
     public function product()
     {
-        return $this->render('main/product.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
+        return $this->render('main/product.html.twig');
     }
 
     /**
@@ -63,9 +67,7 @@ class MainController extends AbstractController
      */
     public function basket()
     {
-        return $this->render('main/cart.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
+        return $this->render('main/cart.html.twig');
     }
 
     /**
@@ -73,9 +75,7 @@ class MainController extends AbstractController
      */
     public function order()
     {
-        return $this->render('main/order.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
+        return $this->render('main/order.html.twig');
     } 
     
 }

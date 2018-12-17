@@ -30,3 +30,12 @@ services:
     # view all news at the News page
     App\Service\ViewAllNews:
         public: true
+    
+    App\Service\ViewPharmGroup:
+        public: true
+
+    App\Service\ViewMedForm:
+        public: true
+
+    App\Service\ViewTargetAnimals:
+        public: true
