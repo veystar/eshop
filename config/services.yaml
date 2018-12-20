@@ -31,11 +31,14 @@ services:
     App\Service\ViewAllNews:
         public: true
     
-    App\Service\ViewPharmGroup:
-        public: true
+    #App\Service\ViewPharmGroup:
+    #    public: true
 
-    App\Service\ViewMedForm:
-        public: true
+    #App\Service\ViewMedForm:
+    #    public: true
 
-    App\Service\ViewTargetAnimals:
-        public: true
+    #App\Service\ViewTargetAnimals:
+    #    public: true
+
+    #App\Twig\ViewCategoryExtension:
+    #    public: true

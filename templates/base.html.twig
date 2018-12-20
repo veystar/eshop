@@ -207,33 +207,67 @@
 						<div class="panel-group category-products" id="accordian"><!--category-products-->
 							<div class="panel panel-default">
 							</div>
-								{% for pharmItem in pharm %}
-									<div class="panel panel-default">
-										<div class="panel-heading">
-											<h4 class="panel-title"><a href="#">{{ pharmItem.name }}</a></h4>
-										</div>
-									</div>
-								{% endfor %}
+								<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Антибактериальные</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Противопаразитарные</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Витамины</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Кормовые добавки</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Противомаститные</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Антигельминтики</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Гепатопротекторы</a></h4>
+								</div>
+							</div>
 						</div><!-- /category-products -->
 					
-						<div class="brands_products"><!--brands_products-->
+						<div class="brands_products"><!--target_animals-->
 							<h2>виды животных</h2>
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
-									{% for animalItem in animals %}
-										<li><a href="#"> <span class="pull-right"></span>{{ animalItem.name }}</a></li>
-									{% endfor %}
+									<li><a href="#"> <span class="pull-right"></span>КРС</a></li>
+									<li><a href="#"> <span class="pull-right"></span>Свиньи</a></li>
+									<li><a href="#"> <span class="pull-right"></span>Птица</a></li>
+									<li><a href="#"> <span class="pull-right"></span>Лошади</a></li>
+									<li><a href="#"> <span class="pull-right"></span>Козы, овцы</a></li>
+									<li><a href="#"> <span class="pull-right"></span>Собаки</a></li>
+									<li><a href="#"> <span class="pull-right"></span>Кошки</a></li>
 								</ul>
 							</div>
-						</div><!--/brands_products-->
+						</div><!--/target_animals-->
 
 						<div class="brands_products"><!--medicinal forms-->
 							<h2>Лекформы</h2>
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
-									{% for medItem in medForms %}
-										<li><a href="#"> <span class="pull-right"></span>{{ medItem.name }}</a></li>
-									{% endfor %}
+									<li><a href="#"> <span class="pull-right"></span>Порошки</a></li>
+									<li><a href="#"> <span class="pull-right"></span>Пероральные растворы</a></li>
+									<li><a href="#"> <span class="pull-right"></span>Инъекции</a></li>
+									<li><a href="#"> <span class="pull-right"></span>Мази</a></li>
+									<li><a href="#"> <span class="pull-right"></span>Шприцы</a></li>
 								</ul>
 							</div>
 						</div><!-- medicinal forms -->

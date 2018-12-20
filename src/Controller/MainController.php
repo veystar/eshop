@@ -5,13 +5,13 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Service\ViewAllNews;
-use App\Service\ViewPharmGroup;
-use App\Service\ViewMedForm;
-use App\Service\ViewTargetAnimals;
+#use App\Service\ViewPharmGroup;
+#use App\Service\ViewMedForm;
+#use App\Service\ViewTargetAnimals;
 use App\Repository\NewsItemRepository;
-use App\Repository\PharmGroupRepository;
-use App\Repository\TargetAnimalsRepository;
-use App\Repository\MedicinalFormRepository;
+#use App\Repository\PharmGroupRepository;
+#use App\Repository\TargetAnimalsRepository;
+#use App\Repository\MedicinalFormRepository;
 
 
 class MainController extends AbstractController
@@ -19,7 +19,7 @@ class MainController extends AbstractController
     /**
      * @Route("/", name="main")
      */
-    public function index(PharmGroupRepository $pharmRepository, ViewPharmGroup $pharmService, 
+    /*public function index(PharmGroupRepository $pharmRepository, ViewPharmGroup $pharmService, 
                             MedicinalFormRepository $medRepository, ViewMedForm $medService, 
                             TargetAnimalsRepository $animalRepository, ViewTargetAnimals $animalService)
     {
@@ -27,6 +27,11 @@ class MainController extends AbstractController
         $medForms = $medService->getAllMedForms();
         $animals = $animalService->getAllAnimals();
         return $this->render('main/index.html.twig', compact('pharm', 'medForms', 'animals'));
+    } */
+
+    public function index()
+    {
+        return $this->render('main/index.html.twig');
     }
 
     /**
