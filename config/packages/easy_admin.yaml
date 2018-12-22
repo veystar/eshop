@@ -15,7 +15,7 @@ easy_admin:
                 title: '%%entity_label%%'
                 fields: [
                     'id',
-                    { property: 'image', type: 'image', base_path: '%app.path.product_images%' }, 
+                    { property: 'image', type: 'image', base_path: '/images/products' }, 
                     { property: 'name', label: 'Наименование' }, 
                     { property: 'Manufacturer', label: 'Производитель' },
                     { property: 'Brief', label: 'Инфо' },
