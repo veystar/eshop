@@ -14,7 +14,8 @@ easy_admin:
             list:
                 title: '%%entity_label%%'
                 fields: [
-                    'id', 
+                    'id',
+                    { property: 'image', type: 'image', base_path: '%app.path.product_images%' }, 
                     { property: 'name', label: 'Наименование' }, 
                     { property: 'Manufacturer', label: 'Производитель' },
                     { property: 'Brief', label: 'Инфо' },
@@ -27,6 +28,20 @@ easy_admin:
             new:
                 title: '%%entity_label%%'
                 fields: [ 
+                    { property: 'imageFile', type: 'vich_image' },
+                    { property: 'name', label: 'Наименование' }, 
+                    { property: 'Manufacturer', label: 'Производитель' },
+                    { property: 'Brief', label: 'Инфо' },
+                    { property: 'Price', label: 'Цена' }, 
+                    { property: 'TopSale', label: 'Топ продаж?' },
+                    { property: 'PharmGroup', label: 'Фарм группа' },
+                    { property: 'MedicinalForm', label: 'Лекформа' },
+                    { property: 'TargetAnimals', label: 'Виды животных'}
+                    ]
+            edit:
+                title: '%%entity_label%%'
+                fields: [ 
+                    { property: 'imageFile', type: 'vich_image' },
                     { property: 'name', label: 'Наименование' }, 
                     { property: 'Manufacturer', label: 'Производитель' },
                     { property: 'Brief', label: 'Инфо' },
@@ -50,6 +65,11 @@ easy_admin:
                 fields: [
                     { property: 'name', label: 'Наименование' }
                         ]
+            edit:
+                title: '%%entity_label%%'
+                fields: [
+                    { property: 'name', label: 'Наименование' }
+                        ]
         PharmGroup:
             class: App\Entity\PharmGroup
             label: 'Фарм группы'
@@ -64,6 +84,11 @@ easy_admin:
                 fields: [
                     { property: 'name', label: 'Наименование' }
                         ]
+            edit:
+                title: '%%entity_label%%'
+                fields: [
+                    { property: 'name', label: 'Наименование' }
+                        ]
         TargetAnimals:
             class: App\Entity\TargetAnimals
             label: 'Виды животных'
@@ -74,6 +99,11 @@ easy_admin:
                     { property: 'name', label: 'Наименование' }
                         ]
             new:
+                title: '%%entity_label%%'
+                fields: [
+                    { property: 'name', label: 'Наименование' }
+                        ]
+            edit:
                 title: '%%entity_label%%'
                 fields: [
                     { property: 'name', label: 'Наименование' }
