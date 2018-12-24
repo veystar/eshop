@@ -5,10 +5,12 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Service\ViewAllNews;
+use App\Service\ViewAllProducts;
 #use App\Service\ViewPharmGroup;
 #use App\Service\ViewMedForm;
 #use App\Service\ViewTargetAnimals;
 use App\Repository\NewsItemRepository;
+use App\Repository\ProductRepository;
 #use App\Repository\PharmGroupRepository;
 #use App\Repository\TargetAnimalsRepository;
 #use App\Repository\MedicinalFormRepository;
@@ -29,9 +31,10 @@ class MainController extends AbstractController
         return $this->render('main/index.html.twig', compact('pharm', 'medForms', 'animals'));
     } */
 
-    public function index()
+    public function index(ProductRepository $productRepository, ViewAllProducts $productService)
     {
-        return $this->render('main/index.html.twig');
+        $products = $productService->getAllProducts();
+        return $this->render('main/index.html.twig', compact('products'));
     }
 
     /**

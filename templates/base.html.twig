@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+
     <title>{% block title %}Home | E-Shopper{% endblock %}</title>
+
     <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/prettyPhoto.css') }}" rel="stylesheet">
@@ -203,7 +205,7 @@
 			<div class="row">
 				<div class="col-sm-3">
 					<div class="left-sidebar">
-						<h2>Фарм группы</h2>
+						<h2>По действию</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-products-->
 							<div class="panel panel-default">
 							</div>
@@ -245,7 +247,7 @@
 						</div><!-- /category-products -->
 					
 						<div class="brands_products"><!--target_animals-->
-							<h2>виды животных</h2>
+							<h2>По виду животных</h2>
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
 									<li><a href="#"> <span class="pull-right"></span>КРС</a></li>
@@ -260,7 +262,7 @@
 						</div><!--/target_animals-->
 
 						<div class="brands_products"><!--medicinal forms-->
-							<h2>Лекформы</h2>
+							<h2>По лекформе</h2>
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
 									<li><a href="#"> <span class="pull-right"></span>Порошки</a></li>
@@ -273,7 +275,7 @@
 						</div><!-- medicinal forms -->
 						
 						<div class="price-range"><!--price-range-->
-							<h2>Цена</h2>
+							<h2>По цене</h2>
 							<div class="well text-center">
 								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
 								 <b class="pull-left">$ 0</b> <b class="pull-right">$ 600</b>
@@ -288,225 +290,10 @@
 				</div>
 				
 				<div class="col-sm-9 padding-right">
+
                 {% block content %}
-					<div class="features_items"><!--features_items-->
-						<h2 class="title text-center">Продукция</h2>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-										<div class="productinfo text-center">
-											<img src="{{ asset('/images/home/product1.jpg') }}" alt="" />
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-										</div>
-										<div class="product-overlay">
-											<div class="overlay-content">
-												<h2>$56</h2>
-												<p>Easy Polo Black Edition</p>
-												<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-											</div>
-										</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="{{ asset('/images/home/product2.jpg') }}" alt="" />
-										<h2>$56</h2>
-										<p>Easy Polo Black Edition</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="{{ asset('/images/home/product3.jpg') }}" alt="" />
-										<h2>$56</h2>
-										<p>Easy Polo Black Edition</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="{{ asset('/images/home/product4.jpg') }}" alt="" />
-										<h2>$56</h2>
-										<p>Easy Polo Black Edition</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-										</div>
-									</div>
-									<img src="images/home/new.png" class="new" alt="" />
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="{{ asset('/images/home/product5.jpg') }}" alt="" />
-										<h2>$56</h2>
-										<p>Easy Polo Black Edition</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-										</div>
-									</div>
-									<img src="images/home/sale.png" class="new" alt="" />
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img src="{{ asset('/images/home/product6.jpg') }}" alt="" />
-										<h2>$56</h2>
-										<p>Easy Polo Black Edition</p>
-										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<h2>$56</h2>
-											<p>Easy Polo Black Edition</p>
-											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-					</div><!--features_items-->
-					
-					<div class="recommended_items"><!--recommended_items-->
-						<h2 class="title text-center">Топ продаж</h2>
-						
-						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
-							<div class="carousel-inner">
-								<div class="item active">	
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="{{ asset('/images/home/recommend1.jpg') }}" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="{{ asset('/images/home/recommend1.jpg') }}" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="{{ asset('/images/home/recommend3.jpg') }}" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="item">	
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="{{ asset('/images/home/recommend3.jpg') }}" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="{{ asset('/images/home/recommend2.jpg') }}" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4">
-										<div class="product-image-wrapper">
-											<div class="single-products">
-												<div class="productinfo text-center">
-													<img src="{{ asset('/images/home/recommend3.jpg') }}" alt="" />
-													<h2>$56</h2>
-													<p>Easy Polo Black Edition</p>
-													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-												</div>
-												
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							 <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
-								<i class="fa fa-angle-left"></i>
-							  </a>
-							  <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
-								<i class="fa fa-angle-right"></i>
-							  </a>			
-						</div>
-					</div><!--/recommended_items-->
-					{% endblock %}
+
+				{% endblock %}
 				</div>
 			</div>
 		</div>

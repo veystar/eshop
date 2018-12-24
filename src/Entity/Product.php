@@ -31,7 +31,7 @@ class Product
     private $Manufacturer;
 
     /**
-     * @ORM\Column(type="text", length=512)
+     * @ORM\Column(type="text", length=4096)
      */
     private $Brief;
 

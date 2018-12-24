@@ -18,9 +18,9 @@ easy_admin:
                     { property: 'image', type: 'image', base_path: '/images/products' }, 
                     { property: 'name', label: 'Наименование' }, 
                     { property: 'Manufacturer', label: 'Производитель' },
-                    { property: 'Brief', label: 'Инфо' },
+                    { property: 'Brief', label: 'Описание' },
                     { property: 'Price', label: 'Цена' }, 
-                    { property: 'TopSale', label: 'Топ продаж?' },
+                    { property: 'TopSale', label: 'Топ продаж' },
                     { property: 'PharmGroup', label: 'Фарм группа' },
                     { property: 'MedicinalForm', label: 'Лекформа' },
                     { property: 'TargetAnimals', label: 'Виды животных'}
