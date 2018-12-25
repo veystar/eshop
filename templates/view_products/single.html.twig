@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Подробнее... | Nova{% endblock %}
+
+{% block content %}
+<div class="col-sm-12">    			   			
+	<h2 class="title text-center"><strong> Подробнее о продукте : "{{ product.name }}"</strong></h2>    			    				    				
+</div>
+<div class="col-sm-12">
+	<div class="product-details"><!--product-details-->
+		<div class="col-sm-5">
+			<div class="view-product">
+				<img src="/images/products/{{ product.image }}" alt="" />
+			</div>
+		</div>
+		<div class="col-sm-7">
+			<div class="product-information"><!--/product-information-->
+				<h2>{{ product.name }}</h2>
+					<p><b>Производитель:</b> {{ product.Manufacturer }}</p>
+					    <span>
+							<span>UAH {{ product.Price }}</span>
+						</span>
+						<p><b>Фарм. группа:</b> {{ product.PharmGroup }}</p>
+                        <p><b>Лекформа:</b> {{ product.MedicinalForm }}</p>
+                        <p><b>Виды животных:</b> {{ product.TargetAnimals }}</p>
+                        <input type="button" name="submit" onclick="location.href = '/'" class="btn btn-default get" value="Назад в каталог">
+			</div><!--/product-information-->
+		</div>
+    </div><!--/product-details-->
+</div>
+<div class="col-sm-12">    			   			
+	<h2 class="title text-center"><strong> Инструкция</strong></h2>    			    				    				
+</div>
+<div class="blog-post-area">
+<p align="justify">{{ product.Brief|raw }}</p>
+</div>
+{% endblock %}

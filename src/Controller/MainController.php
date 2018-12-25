@@ -63,14 +63,6 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/show/{id}", name="single_product")
-     */
-    public function product()
-    {
-        return $this->render('main/product.html.twig');
-    }
-
-    /**
      * @Route("/cart", name="cart")
      */
     public function basket()
