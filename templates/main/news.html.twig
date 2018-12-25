@@ -9,7 +9,7 @@
 </div>
 <div class="blog-post-area">
 	<div class="single-blog-post">
-		{% for newsItem in news %}
+		{% for newsItem in news|reverse %}
 			<h3>{{ newsItem.title }}</h3>
 				<div class="post-meta">
 					<ul>
