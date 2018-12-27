@@ -55,14 +55,6 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/contacts", name="contacts")
-     */
-    public function contacts()
-    {
-        return $this->render('main/contacts.html.twig');
-    }
-
-    /**
      * @Route("/cart", name="cart")
      */
     public function basket()

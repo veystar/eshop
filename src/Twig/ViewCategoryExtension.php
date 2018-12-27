@@ -23,7 +23,7 @@ class ViewCategoryExtension extends AbstractExtension
 
     public function showPharmCategories()
     {
-        $pharm = $this->$pharmRepository->findAll();
+        $pharm = $this->pharmRepository->findAll();
         dump($pharm);
         return $pharm;
     }
