@@ -5,11 +5,14 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ProductRepository;
+#use App\Repository\PharmGroupRepository;
+#use App\Repository\TargetAnimalsRepository;
+#use App\Repository\MedicinalFormRepository;
 
 class ViewProductsController extends AbstractController
 {
     /**
-     * @Route("/view/{id}", name="view_products")
+     * @Route("/view/{id}", name="view_products", requirements={"id"="\d+"})
      */
     public function viewSingleProduct($id, ProductRepository $productRepository)
     {
@@ -19,12 +22,11 @@ class ViewProductsController extends AbstractController
     }
 
     /**
-     * @Route("/category/{id}", name="view_category")
+     * @Route("/{category}/{id}", name="view_category")
      */
-    public function viewCategory()
+    public function viewPharmCategory($category, $id, ProductRepository $productRepository)
     {
-        return $this->render('view_products/index.html.twig', [
-            'controller_name' => 'ViewProductsController',
-        ]);
+        $products = $productRepository->findBy([$category => $id]); //obtain products from repo
+        return $this->render('view_products/selected.html.twig', compact('products'));
     }
 }

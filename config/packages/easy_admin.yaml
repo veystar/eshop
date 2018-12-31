@@ -59,16 +59,19 @@ easy_admin:
                 fields: [
                     'id', 
                     { property: 'name', label: 'Наименование' }
+                    { property: 'alias', label: 'Псевдоним' }
                         ]
             new:
                 title: '%%entity_label%%'
                 fields: [
                     { property: 'name', label: 'Наименование' }
+                    { property: 'alias', label: 'Псевдоним' }
                         ]
             edit:
                 title: '%%entity_label%%'
                 fields: [
                     { property: 'name', label: 'Наименование' }
+                    { property: 'alias', label: 'Псевдоним' }
                         ]
         PharmGroup:
             class: App\Entity\PharmGroup
@@ -78,16 +81,19 @@ easy_admin:
                 fields: [
                     'id', 
                     { property: 'name', label: 'Наименование' }
+                    { property: 'alias', label: 'Псевдоним' }
                         ]
             new:
                 title: '%%entity_label%%'
                 fields: [
                     { property: 'name', label: 'Наименование' }
+                    { property: 'alias', label: 'Псевдоним' }
                         ]
             edit:
                 title: '%%entity_label%%'
                 fields: [
                     { property: 'name', label: 'Наименование' }
+                    { property: 'alias', label: 'Псевдоним' }
                         ]
         TargetAnimals:
             class: App\Entity\TargetAnimals
@@ -97,16 +103,19 @@ easy_admin:
                 fields: [
                     'id', 
                     { property: 'name', label: 'Наименование' }
+                    { property: 'alias', label: 'Псевдоним' }
                         ]
             new:
                 title: '%%entity_label%%'
                 fields: [
                     { property: 'name', label: 'Наименование' }
+                    { property: 'alias', label: 'Псевдоним' }
                         ]
             edit:
                 title: '%%entity_label%%'
                 fields: [
                     { property: 'name', label: 'Наименование' }
+                    { property: 'alias', label: 'Псевдоним' }
                         ]
         User:
             class: App\Entity\User

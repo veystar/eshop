@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Категория | Nova{% endblock %}
+
+{% block content %}
+<div class="features_items"><!--products-->
+        <h2 class="title text-center">Категория</h2>
+    <div class="features_items"><!--products-->
+        <h2 class="title text-center"></h2>
+            <input type="submit" name="submit" onclick="location.href='/'" class="btn btn-primary pull-right" value="Сброс фильтров">
+            {% for item in products %}
+
+            <div class="col-sm-4">
+                <div class="product-image-wrapper">
+                    <div class="single-products">
+                        <div class="productinfo text-center">
+                            <a href="/view/{{item.id}}"><img src="/images/products/{{ item.image }}" alt="" /></a>
+                            <h2>UAH {{ item.price|number_format(2, ',', '.') }}</h2>
+                            <p>{{ item.name }}</p>
+                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
+                        </div>
+                        {% if item.TopSale %}
+                        <img src="images/home/sale.png" class="new" alt="" />
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+    </div><!--products-->
+</div>
+{% endblock %}

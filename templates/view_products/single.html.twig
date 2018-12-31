@@ -18,7 +18,7 @@
 				<h2>{{ product.name }}</h2>
 					<p><b>Производитель:</b> {{ product.Manufacturer }}</p>
 					    <span>
-							<span>UAH {{ product.Price }}</span>
+							<span>UAH {{ product.Price|number_format(2, ',', '.') }}</span>
 						</span>
 						<p><b>Фарм. группа:</b> {{ product.PharmGroup }}</p>
                         <p><b>Лекформа:</b> {{ product.MedicinalForm }}</p>

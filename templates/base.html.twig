@@ -212,7 +212,7 @@
 								{% for pharmItem in pharm %}
 									<div class="panel panel-default">
 										<div class="panel-heading">
-											<h4 class="panel-title"><a href="#">{{ pharmItem.name }}</a></h4>
+											<h4 class="panel-title"><a href="/PharmGroup/{{ pharmItem.id }}">{{ pharmItem.name }}</a></h4>
 										</div>
 									</div>
 								{% endfor %}
@@ -224,7 +224,7 @@
 								<ul class="nav nav-pills nav-stacked">
 								{% set animals = showAnimals() %}
 								{% for animalItem in animals %}
-									<li><a href="#"> <span class="pull-right"></span>{{ animalItem.name }}</a></li>
+									<li><a href="/TargetAnimals/{{ animalItem.id }}"> <span class="pull-right"></span>{{ animalItem.name }}</a></li>
 								{% endfor %}
 								</ul>
 							</div>
@@ -236,7 +236,7 @@
 								<ul class="nav nav-pills nav-stacked">
 								{% set med = showMed() %}
 								{% for medItem in med %}
-									<li><a href="#"> <span class="pull-right"></span>{{ medItem.name }}</a></li>
+									<li><a href="/MedicinalForm/{{ medItem.id }}"> <span class="pull-right"></span>{{ medItem.name }}</a></li>
 								{% endfor %}
 								</ul>
 							</div>
