@@ -15,6 +15,7 @@
     <link href="{{ asset('/css/animate.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/main.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/responsive.css') }}" rel="stylesheet">
+	
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -207,56 +208,24 @@
 					<div class="left-sidebar">
 						<h2>По действию</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-products-->
-							<div class="panel panel-default">
-							</div>
-								<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Антибактериальные</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Противопаразитарные</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Витамины</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Кормовые добавки</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Противомаститные</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Антигельминтики</a></h4>
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Гепатопротекторы</a></h4>
-								</div>
-							</div>
+								{% set pharm = showPharm() %}
+								{% for pharmItem in pharm %}
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h4 class="panel-title"><a href="#">{{ pharmItem.name }}</a></h4>
+										</div>
+									</div>
+								{% endfor %}
 						</div><!-- /category-products -->
 					
 						<div class="brands_products"><!--target_animals-->
 							<h2>По виду животных</h2>
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
-									<li><a href="#"> <span class="pull-right"></span>КРС</a></li>
-									<li><a href="#"> <span class="pull-right"></span>Свиньи</a></li>
-									<li><a href="#"> <span class="pull-right"></span>Птица</a></li>
-									<li><a href="#"> <span class="pull-right"></span>Лошади</a></li>
-									<li><a href="#"> <span class="pull-right"></span>Козы, овцы</a></li>
-									<li><a href="#"> <span class="pull-right"></span>Собаки</a></li>
-									<li><a href="#"> <span class="pull-right"></span>Кошки</a></li>
+								{% set animals = showAnimals() %}
+								{% for animalItem in animals %}
+									<li><a href="#"> <span class="pull-right"></span>{{ animalItem.name }}</a></li>
+								{% endfor %}
 								</ul>
 							</div>
 						</div><!--/target_animals-->
@@ -265,11 +234,10 @@
 							<h2>По лекформе</h2>
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
-									<li><a href="#"> <span class="pull-right"></span>Порошки</a></li>
-									<li><a href="#"> <span class="pull-right"></span>Пероральные растворы</a></li>
-									<li><a href="#"> <span class="pull-right"></span>Инъекции</a></li>
-									<li><a href="#"> <span class="pull-right"></span>Мази</a></li>
-									<li><a href="#"> <span class="pull-right"></span>Шприцы</a></li>
+								{% set med = showMed() %}
+								{% for medItem in med %}
+									<li><a href="#"> <span class="pull-right"></span>{{ medItem.name }}</a></li>
+								{% endfor %}
 								</ul>
 							</div>
 						</div><!-- medicinal forms -->

@@ -44,5 +44,14 @@ services:
     #App\Service\ViewTargetAnimals:
     #    public: true
 
-    #App\Twig\ViewCategoryExtension:
-    #    public: true
+    App\Twig\ViewPharmCategoryExtension:
+        public: true
+        tags: ['twig.extension']
+
+    App\Twig\ViewMedCategoryExtension:
+        public: true
+        tags: ['twig.extension']
+
+    App\Twig\ViewAnimalsCategoryExtension:
+        public: true
+        tags: ['twig.extension']

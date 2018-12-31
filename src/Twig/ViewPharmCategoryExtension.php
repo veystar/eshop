@@ -5,7 +5,7 @@ use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 use App\Repository\PharmGroupRepository;
 
-class ViewCategoryExtension extends AbstractExtension
+class ViewPharmCategoryExtension extends AbstractExtension
 {
     private  $pharmRepository;
 
@@ -24,7 +24,6 @@ class ViewCategoryExtension extends AbstractExtension
     public function showPharmCategories()
     {
         $pharm = $this->pharmRepository->findAll();
-        dump($pharm);
         return $pharm;
     }
 }
