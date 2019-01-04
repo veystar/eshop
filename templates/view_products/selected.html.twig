@@ -14,10 +14,10 @@
                 <div class="product-image-wrapper">
                     <div class="single-products">
                         <div class="productinfo text-center">
-                            <a href="/view/{{item.id}}"><img src="/images/products/{{ item.image }}" alt="" /></a>
-                            <h2>UAH {{ item.price|number_format(2, ',', '.') }}</h2>
+                            <img src="/images/products/{{ item.image }}" alt="" />
+                            <h2>{{ item.price|number_format(2, ',', '.') }} грн.</h2>
                             <p>{{ item.name }}</p>
-                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
+                            <a href="/view/{{item.id}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Подробнее</a>
                         </div>
                         {% if item.TopSale %}
                         <img src="images/home/sale.png" class="new" alt="" />

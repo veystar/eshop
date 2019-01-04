@@ -18,12 +18,12 @@
 				<h2>{{ product.name }}</h2>
 					<p><b>Производитель:</b> {{ product.Manufacturer }}</p>
 					    <span>
-							<span>UAH {{ product.Price|number_format(2, ',', '.') }}</span>
+							<span>{{ product.Price|number_format(2, ',', '.') }} грн.</span>
 						</span>
 						<p><b>Фарм. группа:</b> {{ product.PharmGroup }}</p>
                         <p><b>Лекформа:</b> {{ product.MedicinalForm }}</p>
                         <p><b>Виды животных:</b> {{ product.TargetAnimals }}</p>
-                        <input type="button" name="submit" onclick="location.href = '/'" class="btn btn-default get" value="Назад в каталог">
+                        <a href="/"><input type="button" name="submit" class="btn btn-default get" value="Назад в каталог"></a> <a href="/cart"><input type="button" name="submit" class="btn btn-default get" value="В корзину"></a>
 			</div><!--/product-information-->
 		</div>
     </div><!--/product-details-->
