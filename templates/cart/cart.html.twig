@@ -48,7 +48,7 @@
 									<p class="cart_total_price">{{ (p.product.price * p.quantity)|number_format(2, ',', ' ') }} грн.</p>
 								</td>
 								<td class="cart_delete">
-									<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+									<a class="cart_quantity_delete" href="{{ path('remove_from_cart', {'product': p.product.id}) }}"><i class="fa fa-times"></i></a>
 								</td>
 							</tr>
 							{% set total = total + (p.product.price * p.quantity) %}
