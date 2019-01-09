@@ -2,7 +2,6 @@
 namespace App\Entity;
 
 use Symfony\Component\HttpFoundation\File\File;
-#use Symfony\Component\Routing\Annotation\Route;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 use Doctrine\ORM\Mapping as ORM;

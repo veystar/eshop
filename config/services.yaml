@@ -55,3 +55,6 @@ services:
     App\Twig\ViewAnimalsCategoryExtension:
         public: true
         tags: ['twig.extension']
+    
+    App\Service\CartManager:
+        public: true

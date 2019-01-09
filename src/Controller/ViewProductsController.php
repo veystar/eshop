@@ -5,9 +5,6 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ProductRepository;
-#use App\Repository\PharmGroupRepository;
-#use App\Repository\TargetAnimalsRepository;
-#use App\Repository\MedicinalFormRepository;
 
 class ViewProductsController extends AbstractController
 {

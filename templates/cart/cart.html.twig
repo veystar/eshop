@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Login | Nova{% endblock %}
+
+{% block content %}
+
+<section id="cart_items">
+		<div class="container">
+            <div class="row">    		
+	    		<div class="col-sm-12">    			   			
+					<h2 class="title text-center"><strong>Корзина</strong></h2>    			    				    				
+				</div>			 		
+			</div>
+			<div class="table-responsive cart_info">
+				<table class="table table-condensed">
+					<thead>
+						<tr class="cart_menu">
+							<td width=20%></td>
+							<td class="description">Препарат</td>
+							<td class="price">Цена</td>
+							<td class="quantity">Количество</td>
+							<td class="total">Сумма</td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody>
+						{% set total = 0 %}
+						{% for p in basket %}
+							<tr>
+								<td class="cart_product">
+									<img width=33% src="/images/products/{{ p.product.image }}" alt="">
+								</td>
+								<td class="cart_description">
+									<h4><a href="/view/{{ p.product.id }}">{{ p.product.name }}</a></h4>
+									<p>ID: {{ p.product.id }}</p>
+								</td>
+								<td class="cart_price">
+									<p>{{ p.product.price|number_format(2, ',', ' ') }} грн.</p>
+								</td>
+								<td class="cart_quantity">
+									<div class="cart_quantity_button">
+										<a class="cart_quantity_up" href=""> + </a>
+										<input class="cart_quantity_input" type="text" name="quantity" value="{{ p.quantity }}" autocomplete="off" size="2">
+										<a class="cart_quantity_down" href=""> - </a>
+									</div>
+								</td>
+								<td class="cart_total">
+									<p class="cart_total_price">{{ (p.product.price * p.quantity)|number_format(2, ',', ' ') }} грн.</p>
+								</td>
+								<td class="cart_delete">
+									<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+								</td>
+							</tr>
+							{% set total = total + (p.product.price * p.quantity) %}
+						{% endfor %}
+						<tr>
+							<td class="cart_product" width=20%></td>
+							<td class="cart_description"></td>
+							<td class="cart_price"></td>
+							<td class="cart_quantity"><p class="cart_total_price"><b>Итого:</b></p></td>
+							<td class="cart_total"><p class="cart_total_price"><b>{{ total }} грн.</b></p></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section> <!--/#cart_items-->
+
+	<section id="do_action">
+		<div class="container">
+			<div class="heading">
+				<h3>Что бы Вы хотели сделать далее?</h3>
+				<a href="/"><input type="button" name="submit" class="btn btn-default get" value="Продолжить покупки"></a>
+				<a href="/"><input type="button" name="submit" class="btn btn-default get" value="Очистить корзину"></a>
+				<a href="/"><input type="button" name="submit" class="btn btn-default get" value="Сохранить изменения"></a>
+				<a href="/"><input type="button" name="submit" class="btn btn-default get" value="Оформить заказ"></a>
+				</br></br>
+			</div>
+			
+		</div>
+	</section><!--/#do_action-->
+
+{% endblock %}
