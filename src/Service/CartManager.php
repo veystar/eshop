@@ -93,4 +93,6 @@ class CartManager
         }
         return $count;
     }
+
+    
 }

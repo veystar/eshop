@@ -31,9 +31,18 @@ class CartController extends AbstractController
     /**
      * @Route("/remove-from-cart/{product}", name="remove_from_cart")
     */
-    public function remove(Product $product, CartManager $cartService)
+    public function remove(Product $product, CartManager $cartService, Request $request)
     {
+        
+        $arr = json_decode($request->getContent(), true);
         $cartService->remove($product);
+
+        if ($request->isXmlHttpRequest()) {
+            return new JsonResponse([
+                'error' => false,
+                'total' => $cartService->getTotal()
+            ]);
+        }
         return $this->redirectToRoute('cart');
     }
 
@@ -46,4 +55,6 @@ class CartController extends AbstractController
         $cartService->emptyCart();
         return $this->redirect($referer); //'category');
     }
+
+    
 }
