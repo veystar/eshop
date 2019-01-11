@@ -70,6 +70,24 @@ class CartManager
         $this->session->remove(self::SESSION_CART_ID);
     }
 
+    public function change(Product $product, int $sign)
+    {
+        $cart = $this->session->get(self::SESSION_CART_ID);
+
+        if ($this->session->has(self::SESSION_CART_ID) && isset($cart[$product->getId()]))
+            {
+                if ($sign == 1) {
+                    $cart[$product->getId()] = $cart[$product->getId()] + 1;
+                }
+                elseif($sign == -1) {
+                    $cart[$product->getId()] = $cart[$product->getId()] - 1;
+                }
+            $this->session->set(self::SESSION_CART_ID, $cart);
+            }
+        
+        
+    }
+
     public function getTotal()
     {
         $total = 0;

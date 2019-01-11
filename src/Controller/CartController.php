@@ -56,5 +56,21 @@ class CartController extends AbstractController
         return $this->redirect($referer); //'category');
     }
 
+    /**
+     * @Route("/change-position/{product}/{sign}", name="change")
+    */
+    public function change(Product $product,  $sign, CartManager $cartService, Request $request)
+    {
+        $arr = json_decode($request->getContent(), true);
+        $cartService->change($product, $sign);
+        if ($request->isXmlHttpRequest()) {
+            return new JsonResponse([
+                'error' => false,
+                'total' => $cartService->getTotal()
+            ]);
+            }
+        return $this->redirectToRoute('cart');
+    }
+
     
 }
