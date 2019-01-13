@@ -19,6 +19,17 @@ class ProductRepository extends ServiceEntityRepository
         parent::__construct($registry, Product::class);
     }
 
+    public function getProductsQuery($minPrice, $maxPrice)
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.Price >= :minprice AND p.Price <= :maxprice')
+            ->setParameter('minprice', $minPrice)
+            ->setParameter('maxprice', $maxPrice)
+            ->orderBy('p.Price', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Product[] Returns an array of Product objects
     //  */

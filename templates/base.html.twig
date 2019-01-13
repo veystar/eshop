@@ -9,12 +9,15 @@
     <title>{% block title %}Home | E-Shopper{% endblock %}</title>
 
     <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/css/ion.rangeSlider.min.css"/>
+	<link href="{{ asset('/css/ion.rangeSlider.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/prettyPhoto.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/price-range.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/animate.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/main.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/responsive.css') }}" rel="stylesheet">
+	
+	
 	
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -74,7 +77,7 @@
 								</ul>
 							</div>
 							
-							<div class="btn-group">
+							<!-- <div class="btn-group">
 								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
 									UAH
 									<span class="caret"></span>
@@ -83,7 +86,7 @@
 									<li><a href="">USD</a></li>
 									<li><a href="">EUR</a></li>
 								</ul>
-							</div>
+							</div> -->
 						</div>
 					</div>
 					<div class="col-md-8 clearfix">
@@ -245,18 +248,16 @@
 						<div class="price-range"><!--price-range-->
 							<h2>По цене</h2>
 							<div class="well text-center">
-								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
-								 <b class="pull-left">UAH 0</b> <b class="pull-right">UAH 200</b>
+								 <input type="text" name="js-range-slider" value="" /></br>
+								<input type="hidden" id="slider_values" class="" value="" />
+								 <!-- <b class="pull-left">0</b> <b class="pull-right">200</b> -->
+								 <a href=""><input type="button" onclick="getValuesFromSlider();" name="submit" class="btn btn-default get" value="Подобрать"></a>
 							</div>
 						</div><!--/price-range-->
-						
-						<!-- <div class="shipping text-center">shipping
-							<img src="{{ asset('/images/home/shipping.jpg') }}" alt="" />
-						</div>/shipping-->
-					
 					</div>
 				</div>
 				
+
 				<div class="col-sm-9 padding-right">
 
                 {% block content %}
@@ -266,27 +267,52 @@
 			</div>
 		</div>
 	</section>
-	
+	{% block footer %}
 	<footer id="footer"><!--Footer-->
 		
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
 					<p class="pull-left">Copyright © 2018 NOVA Ltd. All rights reserved.</p>
-					<p class="pull-right">Re-Designed by <span><a target="_blank" href="http://www.themeum.com">Yurii Sokolov</a></span></p>
+					<p class="pull-right">Re-Designed by <span><a target="_blank" href="yurii.sokoloff@gmail.com">Yurii Sokolov</a></span></p>
 				</div>
 			</div>
 		</div>
 		
 	</footer><!--/Footer-->
-	
+	{% endblock %}
 
-  
-    <script src="{{ asset('/js/jquery.js') }}"></script>
+	
+    <script src="{{ asset('/js/jquery.min.js') }}"></script>
+	<script src="{{ asset('/js/ion.rangeSlider.js') }}"></script>
+	<script src="{{ asset('/js/jquery-ui.js') }}"></script>
 	<script src="{{ asset('/js/bootstrap.min.js') }}"></script>
 	<script src="{{ asset('/js/jquery.scrollUp.min.js') }}"></script>
-	<script src="{{ asset('/js/price-range.js') }}"></script>
-    <script src="{{ asset('/js/jquery.prettyPhoto.js') }}"></script>
+    <!-- <script src="{{ asset('/js/jquery.prettyPhoto.js') }}"></script> -->
     <script src="{{ asset('/js/main.js') }}"></script>
+	
+	<script>/* -- get price values from slider -- */
+		$(".js-range-slider").ionRangeSlider({
+		skin: "round",    
+		type: "double",
+		min: 0,
+		max: 200,
+		from: 50,
+		to: 150,
+		step: 5,
+		grid: false,
+			onChange: function (data) {
+			$('#slider_values').val(data.from + ',' + data.to);
+			}
+			});  
+	</script>
+	<script>/* -- send Values From Slider to route -- */
+	function getValuesFromSlider()
+		{
+            $.ajax({
+                url: "/price/" + $('#slider_values').val(),
+            })
+        }
+	</script>
 </body>
 </html>

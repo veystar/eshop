@@ -24,29 +24,21 @@ class CartManager
 
         if ($this->session->has(self::SESSION_CART_ID) && isset($cart[$product->getId()])) {
             $cart[$product->getId()] += $quantity;
-//            $this->session->set(self::SESSION_CART_ID, $cart);
-//            return;
         } else {
             $cart[$product->getId()] = $quantity;
         }
         $this->session->set(self::SESSION_CART_ID, $cart);
-
-        /*        if (isset($_SESSION[self::SESSION_CART_ID]) && isset($_SESSION[self::SESSION_CART_ID][$product->getId()])) {
-                    $_SESSION[self::SESSION_CART_ID][$product->getId()] += $quantity;
-                    return;
-                }
-                $_SESSION[self::SESSION_CART_ID][$product->getId()] = $quantity;*/
     }
 
     public function getCart(): array
     {
         $res = [];
 
-//        if (!isset($_SESSION[self::SESSION_CART_ID]) || empty($_SESSION[self::SESSION_CART_ID])) {
+
         if (!$this->session->has(self::SESSION_CART_ID) || empty($this->session->has(self::SESSION_CART_ID))) {
             return [];
         }
-//        foreach ($_SESSION[self::SESSION_CART_ID] as $productId => $quantity) {
+
         foreach ($this->session->get(self::SESSION_CART_ID) as $productId => $quantity) {
             $position['quantity'] = $quantity;
             $position['product'] = $this->repository->find($productId);
