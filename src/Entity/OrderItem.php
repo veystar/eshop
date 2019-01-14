@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Entity;
-
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -35,6 +35,17 @@ class OrderItem
      * @ORM\ManyToOne(targetEntity="App\Entity\Orders", inversedBy="orderItem")
      */
     private $orders;
+
+    public function __construct($price, $quantity, $productId, $orders)
+    {
+        $this->orders = new ArrayCollection();
+
+        $this->price = $price;
+        $this->quantity = $quantity;
+        $this->productId = $productId;
+        $this->orders = $orders;
+
+    }
 
     public function getId(): ?int
     {

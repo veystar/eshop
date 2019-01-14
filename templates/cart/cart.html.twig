@@ -11,6 +11,8 @@
 					<h2 class="title text-center"><strong>Корзина</strong></h2>    			    				    				
 				</div>			 		
 			</div>
+			{% include 'flash_messages.html.twig' %}
+			{% if cart %}
 			<div class="table-responsive cart_info">
 				<table class="table table-condensed">
 					<thead>
@@ -25,7 +27,7 @@
 					</thead>
 					<tbody>
 						{% set total = 0 %}
-						{% for p in basket %}
+						{% for p in cart %}
 							<tr class="cart_row">
 								<td class="cart_product">
 									<img width=33% src="/images/products/{{ p.product.image }}" alt="">
@@ -64,20 +66,24 @@
 					</tbody>
 				</table>
 			</div>
+			{% elseif not cart %}
+			<h4 class="title text-center"><strong>Ваша корзина пуста...</strong></h4>
+			{% endif %}
 		</div>
 	</section> <!--/#cart_items-->
-
+	{% if cart %}
 	<section id="do_action">
 		<div class="container">
 			<div class="heading">
-				<a href="/"><input type="button" name="submit" class="btn btn-default get" value="Продолжить покупки"></a>
+			{% include 'cart/order_form.html.twig' %}
+				<a href="{{ path('main') }}"><input type="button" name="submit" class="btn btn-default get" value="Продолжить покупки"></a>
 				<a href="{{ path('empty_cart') }}"><input type="button" name="submit" class="btn btn-default get" value="Очистить корзину"></a>
-				<a href="{{ path('order') }}"><input type="button" name="submit" class="btn btn-default get" value="Оформить заказ"></a>
+				<!-- <a href="{{ path('order') }}"><input type="button" name="submit" class="btn btn-default get" value="Оформить заказ"></a> -->
 				</br></br>
 			</div>
 		</div>
 	</section><!--/#do_action-->
-
+	{% endif %}
 <script>
         function removeFromCart(productId, el) {
             $.ajax({

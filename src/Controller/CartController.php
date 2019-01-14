@@ -7,6 +7,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Product;
 use Symfony\Component\HttpFoundation\Request;
 use App\Service\CartManager;
+use App\Entity\Orders;
+use App\Form\OrderType;
 
 class CartController extends AbstractController
 {
@@ -16,7 +18,10 @@ class CartController extends AbstractController
     public function cartIndex(CartManager $cartService)
     {
         $basket = $cartService->getCart();
-        return $this->render('cart/cart.html.twig', compact('basket'));
+        $order = new Orders();
+        $orderForm = $this->createForm(OrderType::class, $order);
+        return $this->render('cart/cart.html.twig', ['cart' => $basket, 'orderForm' => $orderForm->createView()
+            ]);
     }
 
     /**

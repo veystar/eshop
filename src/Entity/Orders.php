@@ -51,6 +51,7 @@ class Orders
     public function __construct()
     {
         $this->orderItem = new ArrayCollection();
+        $this->createdAt = new \DateTime();
     }
 
     public function getId(): ?int
